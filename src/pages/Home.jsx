@@ -37,10 +37,10 @@ const Home = () => {
   
 
   return (
-    <Container>
+    <Container fluid className='p-5'>
       <Row>
         <Col>
-          <Accordion defaultActiveKey="0">
+          <Accordion defaultActiveKey="0" sticky="left">
             <Accordion.Item eventKey="0">
               <Accordion.Header>Category</Accordion.Header>
               <Accordion.Body >

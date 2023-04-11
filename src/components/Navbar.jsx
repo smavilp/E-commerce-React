@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <Navbar bg="danger" variant="light" className='py-4 px-5 d-flex justify-content-between'>
+    <Navbar bg="danger" variant="light" sticky="top"  className='py-2 px-4 d-flex justify-content-between'>
       <Navbar.Brand as={Link} to={"/"} style={{color:'#ffffff'}}>E-commerce</Navbar.Brand>
-      <Nav className='mb-auto'>
+      <Nav>
         <Nav.Link as={Link} to={"/login"} >
           <i className='bx bx-user bx-md' style={{color:"#fffcfc"}}  ></i>
         </Nav.Link>
