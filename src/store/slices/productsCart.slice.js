@@ -35,7 +35,7 @@ export const createProductCartThunk = data => dispatch => {
     // .finally(() => dispatch (setIsLoading(false)))
 }
 
-export const decreaseProductCartThink
+
 
 export const cartCheckoutThunk = () => {
   axios
