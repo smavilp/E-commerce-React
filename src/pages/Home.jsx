@@ -71,14 +71,13 @@ const Home = () => {
           </Row>
           <Row xs={1} md={2} lg={3} xl={4} xxl={5}>
             {products.map( product => (
-              <Card key={product.id} as={Link} to={`/product/${product.id}`} >
-                <Card.Img variant="top" src={product.images[0].url} style={{height: 200, objectFit:"contain"}} className='p-3' />
-                <Card.Body>
+              <Card key={product.id}   >
+                <Container as={Link} to={`/product/${product.id}`}>
+                <Card.Img variant="top"  src={product.images[0].url} style={{height: 200, objectFit:"contain"}} className='p-3'  />
+                </Container>
+                <Card.Body >
                   <Card.Title>{product.title}</Card.Title>
                   <Card.Text>{product.price}</Card.Text>
-                  <Button variant="danger" >
-                    <i className='bx bx-cart bx-sm' style={{color:'#ffffff'}}></i>
-                  </Button>
                 </Card.Body>
               </Card>
             ))}
