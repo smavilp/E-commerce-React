@@ -34,7 +34,7 @@ const Cart = ({show, handleClose}) => {
     </ListGroup>
     
     </Offcanvas.Body>
-    <Button variant="danger" id="button-addon2" onClick={() => dispatch (cartCheckoutThunk())}>Purchase</Button>
+    <Button variant="danger"  className='m-4' onClick={() => dispatch (cartCheckoutThunk())}>Purchase</Button>
   </Offcanvas>
 
   );

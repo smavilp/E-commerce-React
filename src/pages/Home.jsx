@@ -71,7 +71,7 @@ const Home = () => {
           </Row>
           <Row xs={1} md={2} lg={3} xl={4} xxl={5}>
             {products.map( product => (
-              <Card key={product.id}   >
+              <Card key={product.id} className='m-3'  >
                 <Container as={Link} to={`/product/${product.id}`}>
                 <Card.Img variant="top"  src={product.images[0].url} style={{height: 200, objectFit:"contain"}} className='p-3'  />
                 </Container>

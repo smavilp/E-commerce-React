@@ -33,7 +33,7 @@ const CartItem = ({data}) => {
   
 
   return (
-    <Card style={{ width: '18rem' }} className='p-4'>
+    <Card style={{ width: '18rem' }} className='p-4 m-3'>
       <Card.Img variant="top" src={data.product.images?.[0].url} />
       <Card.Body>
         <Card.Title>{data.product.title}</Card.Title>

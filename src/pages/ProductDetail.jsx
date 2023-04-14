@@ -43,25 +43,25 @@ const ProductDetail = () => {
 
   return (
     <Container>
-      <Row>
+      <Row className='m-5 g-5'>
         <Col>
           <Carousel variant='dark'>
             <Carousel.Item>
-              <img style={{maxWidth:"35em", maxHeight:"35em" ,objectFit:"contain"}}
+              <img style={{maxWidth:"30em", maxHeight:"30em" ,objectFit:"contain"}}
                 className="d-block w-100"
                 src={productDetail.images?.[0].url}
                 alt="First slide"
               />
             </Carousel.Item>
             <Carousel.Item>
-              <img style={{maxWidth:"35em", maxHeight:"35em" ,objectFit:"contain"}}
+              <img style={{maxWidth:"30em", maxHeight:"30em" ,objectFit:"contain"}}
                 className="d-block w-100"
                 src={productDetail.images?.[1].url}
                 alt="Second slide"
               />
             </Carousel.Item>
             <Carousel.Item>
-              <img style={{maxWidth:"35em", maxHeight:"35em" ,objectFit:"contain"}}
+              <img style={{maxWidth:"30em", maxHeight:"30em" ,objectFit:"contain"}}
                 className="d-block w-100"
                 src={productDetail.images?.[2].url}
                 alt="Third slide"

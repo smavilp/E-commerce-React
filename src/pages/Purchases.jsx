@@ -27,6 +27,7 @@ const Purchases = () => {
         <Card border="danger"
           style={{ width: "100%", display: "flex", flexDirection: "row" }}
           key={purchase.id}
+          className='p-4 m-4'
         >
           <Card.Img
             variant="left"
