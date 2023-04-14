@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import {getProductsCartThunk, cartCheckoutThunk} from "../store/slices/productsCart.slice"
 import ListGroup from 'react-bootstrap/ListGroup';
-import CartItem from './cartItem';
+import CartItem from './CartItem';
 
 const Cart = ({show, handleClose}) => {
 
