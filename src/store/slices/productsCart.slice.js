@@ -15,32 +15,45 @@ export const productsCart = createSlice({
 })
 
 export const getProductsCartThunk = () => dispatch => {
-  // dispatch ( setIsLoading (true) )
     axios
       .get("https://e-commerce-api-v2.academlo.tech/api/v1/cart", getConfig())
       .then(resp => {
         dispatch(setProductsCart(resp.data))
       })
       .catch(error => console.error(error))
-      // .finally(() => dispatch (setIsLoading(false)))
 
 }
 
 export const createProductCartThunk = data => dispatch => {
-  // dispatch ( setIsLoading (true) )
   axios
     .post("https://e-commerce-api-v2.academlo.tech/api/v1/cart", data, getConfig())
-    .then(()=>dispatch(getProductsCartThunk))
+    .then(() => dispatch(getProductsCartThunk))
     .catch(error => console.error(error))
-    // .finally(() => dispatch (setIsLoading(false)))
 }
 
-
-
-export const cartCheckoutThunk = () => {
+export const updateProductCartThunk = (id, data) => dispatch => {
   axios
-  .post("https://e-commerce-api-v2.academlo.tech/api/v1/purchases", {}, getConfig())
-  .then(() => dispatch)
+    .put(`https://e-commerce-api-v2.academlo.tech/api/v1/cart/${id}`, data, getConfig())
+    .then(()=>{
+      dispatch(getProductsCartThunk)
+    })
+    .catch(error => console.error(error))
+}
+
+export const deleteProductCartThunk = (id) => dispatch => {
+  axios
+    .delete(`https://e-commerce-api-v2.academlo.tech/api/v1/cart/${id}`, getConfig())
+    .then(()=>{
+      dispatch(getProductsCartThunk)
+    })
+    .catch(error => console.error(error))
+}
+
+export const cartCheckoutThunk = () => (dispatch) => {
+  axios
+    .post("https://e-commerce-api-v2.academlo.tech/api/v1/purchases", {}, getConfig())
+    .then(() => dispatch(getProductsCartThunk))
+    .catch((error) => console.error(error))
 }
 
 export const { setProductsCart } = productsCart.actions;

@@ -38,7 +38,6 @@ const ProductDetail = () => {
       quantity: 1,
       productId: id
     }
-    console.log(data)
     dispatch(createProductCartThunk(data))
   }
 
@@ -78,8 +77,11 @@ const ProductDetail = () => {
               <Card.Text>
                 {productDetail.description}
               </Card.Text>
+              <Card.Text>
+                ${productDetail.price}
+              </Card.Text>
               <Button variant="danger" style={{maxWidth:"100%"}} onClick={addProduct}>
-                <i className='bx bx-cart bx-sm' style={{color:'#ffffff'}}></i>
+                Add to Cart <i className='bx bx-cart bx-sm' style={{color:'#ffffff'}}></i>
               </Button>
             </Card.Body>
           </Card>
