@@ -15,7 +15,7 @@ const Cart = ({show, handleClose}) => {
 
   useEffect(() => {
     if (token) dispatch(getProductsCartThunk())
-  }, [token])
+  }, [token, productsCart])
   
   
 

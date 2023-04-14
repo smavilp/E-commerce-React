@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
+import { Link, usaNavigate, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Cart from "./Cart"
 
@@ -9,6 +9,15 @@ const NavBar = () => {
 
   const [show, setShow] = useState(false)
   const handleClose = () => {setShow(false)}
+  const navigate =useNavigate()
+  const showCart = () => {
+    const token =localStorage.getItem("token")
+    if(token){
+      setShow(true)
+    } else {
+      navigate("/login")
+    }
+  }
 
   return (
     <>
@@ -21,7 +30,7 @@ const NavBar = () => {
           <Nav.Link as={Link} to={"/purchases"} >
             <i className='bx bx-box bx-md' style={{color:'#ffffff'}}  ></i>
           </Nav.Link>
-          <Nav.Link onClick={() => setShow(true)}>
+          <Nav.Link onClick={() => showCart()}>
             <i className='bx bx-cart bx-md' style={{color:'#ffffff'}}></i>
           </Nav.Link>
         </Nav>

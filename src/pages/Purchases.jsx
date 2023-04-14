@@ -24,7 +24,7 @@ const Purchases = () => {
     <div>
       <h1>Purchases</h1>
       {purchases.map((purchase) => (
-        <Card
+        <Card border="danger"
           style={{ width: "100%", display: "flex", flexDirection: "row" }}
           key={purchase.id}
         >
@@ -35,7 +35,7 @@ const Purchases = () => {
           />
           <Card.Body>
             <Card.Title>{purchase.product?.title}</Card.Title>
-            <Card.Text>{purchase.quantity} unit(s)</Card.Text>
+            <Card.Text>{purchase.quantity+1} unit(s)</Card.Text>
             <Card.Text>Total: ${purchase.quantity*purchase.product?.price}</Card.Text>
           </Card.Body>
         </Card>
