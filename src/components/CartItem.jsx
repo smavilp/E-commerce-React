@@ -1,10 +1,11 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { Container } from 'react-bootstrap';
 import { useState } from 'react';
 import {updateProductCartThunk, deleteProductCartThunk} from "../store/slices/productsCart.slice";
 import { useDispatch } from 'react-redux';
+import Stack from 'react-bootstrap/Stack';
+
 
 const CartItem = ({data}) => {
   
@@ -33,15 +34,16 @@ const CartItem = ({data}) => {
   
 
   return (
-    <Card style={{ width: '18rem' }} className='p-4 m-3'>
+    <Card style={{ maxWidth: '15rem' }} className='p-4 m-3'>
       <Card.Img variant="top" src={data.product.images?.[0].url} />
       <Card.Body>
         <Card.Title>{data.product.title}</Card.Title>
-        <Container>
+        <Stack direction="horizontal" gap={3}>
           <Button variant='danger' onClick={() => decreaseProduct()}>-</Button>
           <Card.Text>{counter}</Card.Text>
           <Button variant='danger' onClick={() => increaseProduct()}>+</Button>
-        </Container>
+        </Stack>
+        <Card.Text>Subtotal: ${counter*data.product.price}</Card.Text>
         <Button variant="danger" onClick={() => dispatch(deleteProductCartThunk(data.id))}>
           <i className='bx bx-trash'></i>
         </Button>
